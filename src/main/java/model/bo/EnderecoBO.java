@@ -7,6 +7,7 @@ public class EnderecoBO {
 
 	public EnderecoVO salvarEnderecoBO(EnderecoVO novoEndereco) {
 		
+		
 		EnderecoDAO enderecoDAO = new EnderecoDAO();
 		
 		return enderecoDAO.salvarEnderecoDAO(novoEndereco);

@@ -39,6 +39,10 @@ public class TelaEndereco extends JFrame {
 	private MaskFormatter mascaraCep;
 	private JFormattedTextField campoCep;
 	private JLabel lblRua;
+	private JLabel lblNumero;
+	private JLabel lblBairro;
+	private JLabel lblCidade;
+	private JLabel lblEstado;
 
 	/**
 	 * Launch the application.
@@ -97,6 +101,12 @@ public class TelaEndereco extends JFrame {
 				FormSpecs.RELATED_GAP_ROWSPEC,
 				FormSpecs.DEFAULT_ROWSPEC,}));
 		
+		lblCep = new JLabel("CEP: ");
+		lblCep.setForeground(new Color(255, 255, 0));
+		lblCep.setBackground(new Color(255, 255, 0));
+		lblCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		contentPane.add(lblCep, "2, 2, 1, 2, right, default");
+		
 		try {
 		mascaraCep = new MaskFormatter("#####-###");
 		mascaraCep.setValueContainsLiteralCharacters(false);
@@ -104,12 +114,6 @@ public class TelaEndereco extends JFrame {
 			JOptionPane.showMessageDialog(null, "Erro ao criar máscara!");
 		}
 		
-		
-		lblCep = new JLabel("CEP: ");
-		lblCep.setForeground(new Color(255, 255, 0));
-		lblCep.setBackground(new Color(255, 255, 0));
-		lblCep.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		contentPane.add(lblCep, "2, 2, 1, 2, right, default");
 		
 		campoCep = new JFormattedTextField(mascaraCep);
 		contentPane.add(campoCep, "4, 2, fill, default");
@@ -123,16 +127,17 @@ public class TelaEndereco extends JFrame {
 		contentPane.add(campRua, "4, 4, fill, default");
 		campRua.setColumns(10);
 		
-		JLabel lblNumero = new JLabel("Número:");
+		lblNumero = new JLabel("Número:");
 		lblNumero.setForeground(new Color(255, 255, 0));
 		lblNumero.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		contentPane.add(lblNumero, "2, 6, 1, 2, right, default");
+		
 		
 		campNumero = new JTextField();
 		contentPane.add(campNumero, "4, 6, fill, default");
 		campNumero.setColumns(10);
 		
-		JLabel lblBairro = new JLabel("Bairro:");
+		lblBairro = new JLabel("Bairro:");
 		lblBairro.setForeground(new Color(255, 255, 0));
 		lblBairro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		contentPane.add(lblBairro, "2, 8, 1, 2, right, default");
@@ -141,7 +146,7 @@ public class TelaEndereco extends JFrame {
 		contentPane.add(campBairro, "4, 8, fill, default");
 		campBairro.setColumns(10);
 		
-		JLabel lblCidade = new JLabel("Cidade:");
+		lblCidade = new JLabel("Cidade:");
 		lblCidade.setForeground(new Color(255, 255, 0));
 		lblCidade.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		contentPane.add(lblCidade, "2, 10, 1, 2, right, default");
@@ -150,7 +155,7 @@ public class TelaEndereco extends JFrame {
 		contentPane.add(campCidade, "4, 10, fill, default");
 		campCidade.setColumns(10);
 		
-		JLabel lblEstado = new JLabel("Estado: ");
+		lblEstado = new JLabel("Estado: ");
 		lblEstado.setForeground(new Color(255, 255, 0));
 		lblEstado.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		contentPane.add(lblEstado, "2, 12, 1, 2, right, default");

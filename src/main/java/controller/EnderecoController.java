@@ -31,6 +31,7 @@ public class EnderecoController {
 	private String validarString(String texto, String nomeCampo) {
 		boolean valido = (texto != null) && !texto.trim().isEmpty();
 		
+		
 		if(valido) {
 			return "";
 		} else {
