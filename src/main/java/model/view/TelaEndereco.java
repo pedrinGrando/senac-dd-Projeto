@@ -23,6 +23,7 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.FormSpecs;
 import com.jgoodies.forms.layout.RowSpec;
 
+import Exceptions.CampoInvalidoException;
 import model.vo.*;
 import controller.EnderecoController;
 
@@ -166,19 +167,27 @@ public class TelaEndereco extends JFrame {
 				
 				EnderecoController enderecoController = new EnderecoController();
 				EnderecoVO novoEndereco = new EnderecoVO();
+				novoEndereco.setBairro(campBairro.getText());
+				
+				String cepInformado = "";
+				 try {
+					 cepInformado = (String) mascaraCep.stringToValue(campoCep.getText());
+				 } catch (ParseException e1) {
+					 //Sem Ação
+				 }
 				
 				novoEndereco.setCep(campoCep.getText());
 				novoEndereco.setRua(campRua.getText());
-				novoEndereco.setBairro(campBairro.getText());
 				novoEndereco.setNumero(campNumero.getText());
 				novoEndereco.setEstado(campEstado.getText());
 				novoEndereco.setCidade(campCidade.getText());
 				
-				//Chamar o controller.salvarEnderecoController(Objeto);
-				
-				novoEndereco = enderecoController.salvarEnderecoController(novoEndereco);
-				
-				
+				try {
+					enderecoController.salvarEnderecoController(novoEndereco);
+					JOptionPane.showMessageDialog(null, "Endereco cadastrado com sucesso!");
+				}catch(CampoInvalidoException e1) {
+					JOptionPane.showMessageDialog(null, "Os campos abaixo são obrigatórios!\n " + e1.getMessage());
+				}
 				
 			}
 		});
