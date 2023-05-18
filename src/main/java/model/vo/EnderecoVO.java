@@ -19,6 +19,7 @@ public class EnderecoVO {
 		this.cidade = cidade;
 		this.estado = estado;
 		this.numero = numero;
+		
 	}
 
 	public EnderecoVO() {

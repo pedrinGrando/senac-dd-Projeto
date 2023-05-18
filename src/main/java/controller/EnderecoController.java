@@ -39,11 +39,4 @@ public class EnderecoController {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-
 }

@@ -35,9 +35,8 @@ public class EnderecoDAO {
 				Banco.closeConnection(conn);
 				Banco.closePreparedStatement(pstmt);
 			}
-		
 		return novoEndereco;
-	
+
 	}
 	
 }

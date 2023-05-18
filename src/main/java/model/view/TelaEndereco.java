@@ -194,5 +194,4 @@ public class TelaEndereco extends JFrame {
 		btnSalvar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 		contentPane.add(btnSalvar, "4, 18");
 	}
-
 }

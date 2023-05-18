@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 public class Banco {
 	
+	
 	//private static final String DRIVER = "com.mysql.jdbc.Driver"; //MYSQL versão 5
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver"; //MYSQL versão 8
 	private static final String BANCODADOS = "exemplos";
